@@ -6,7 +6,7 @@
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 21:18:56 by rsenelle          #+#    #+#             */
-/*   Updated: 2022/01/13 15:29:35 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/13 15:58:19 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,21 @@ t_list	*check_double(t_list *st_a, int x)
 		st_a = st_a->next; 
 	}
 	return (NULL);
+}
+
+int ft_size_stack(t_list *st)
+{
+	int len;
+
+	len = 0;
+	if (!st)
+		return (0);
+	while (st)
+	{
+		st = st->next;
+		len++;
+	}
+	return (len);
 }
 
 void	parsing(int argc, char **argv, t_ps *s_ps)
@@ -73,6 +88,7 @@ int	main(int argc, char **argv)
 		{
 			while (find_index(&s_ps))
 			{
+				// if (find_index(&s_ps))
 				ft_rot(&s_ps.st_a, "ra");
 			}
 			ft_push(&s_ps.st_b, &s_ps.st_a, "pa");
