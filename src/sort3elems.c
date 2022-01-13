@@ -14,13 +14,6 @@
 
 void	sort_three(t_list **st)
 {
-	int	first;
-	int	second;
-	int	third;
-
-	first = (*st)->num;
-	second = (*st)->next->num;
-	third = (*st)->next->next->num;
 	while (!((*st)->num < (*st)->next->num && (*st)->next->num < (*st)->next->next->num && (*st)->num < (*st)->next->next->num))
 	{
 		if ((*st)->num > (*st)->next->num && (*st)->next->num < (*st)->next->next->num && (*st)->num < (*st)->next->next->num)
@@ -50,4 +43,5 @@ void	push_stack(t_ps *s_ps)
 		s_ps->size_a--;
 		s_ps->size_b++;
 	}
+	
 }

@@ -6,7 +6,7 @@
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 12:47:33 by rsenelle          #+#    #+#             */
-/*   Updated: 2022/01/09 18:59:12 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/13 14:01:55 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct		s_ps
 	size_t	size_a;
 	size_t	size_b;
 	size_t	index;
+	size_t	index_above_it;
 }					t_ps;
 
 void	ft_error();
@@ -43,5 +44,6 @@ void	rrr(t_list **list_a, t_list **list_b, char *s);
 void	ss(t_list **list_a, t_list **list_b, char *s);
 void	sort_three(t_list **st);
 void	push_stack(t_ps *s_ps);
+int		find_index(t_ps *s_ps);
 
 #endif

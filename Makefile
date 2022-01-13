@@ -2,7 +2,9 @@ NAME	=	push_swap
 
 #NAME_B	=	push_swap_bonus
 
-SRCS_F	=	parsing.c		error.c		init_struct.c		ft_swap.c		ft_push.c		ft_rot.c		valid.c		sort3elems.c
+SRCS_F	=	parsing.c		error.c		init_struct.c		ft_swap.c\
+			ft_push.c		ft_rot.c		valid.c		sort3elems.c\
+			find_index.c
 SRCS_D	=	src/
 
 #SRCS_F_B	=

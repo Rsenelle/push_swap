@@ -6,7 +6,7 @@
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 21:18:56 by rsenelle          #+#    #+#             */
-/*   Updated: 2022/01/11 16:12:36 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/13 15:29:35 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	{
 		init_struct(&s_ps);
 		parsing(argc, argv, &s_ps);
-		pst(&s_ps);
+		// pst(&s_ps);
 		//if argc = 3 ???
 		if (argc == 4)
 			sort_three(&s_ps.st_a);
@@ -68,7 +68,28 @@ int	main(int argc, char **argv)
 			push_stack(&s_ps);
 			sort_three(&s_ps.st_a);
 		}
-		pst(&s_ps);
+		// pst(&s_ps);
+		while (s_ps.st_b)
+		{
+			while (find_index(&s_ps))
+			{
+				ft_rot(&s_ps.st_a, "ra");
+			}
+			ft_push(&s_ps.st_b, &s_ps.st_a, "pa");
+		}
+		while (!is_sorted(s_ps.st_a))
+			ft_rot(&s_ps.st_a, "ra");
+		// pst(&s_ps);
+
+		// while (st->b)
+		// {
+		// 	while (nearest_value(st))
+		// 	{
+		// 		rotate(st, 'a');
+		// 	}
+		// 	push(st, 'a');
+		// }
+		// printf("%d ", find_index(&s_ps));
 		// ft_push(&s_ps.st_a, &s_ps.st_b, "pb"); // должен отправить элемент из списка в список б
 		// pst(&s_ps);
 		// ft_push(&s_ps.st_a, &s_ps.st_b, "pb"); // должен отправить элемент из списка в список б
