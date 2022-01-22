@@ -6,16 +6,16 @@
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:21:30 by rsenelle          #+#    #+#             */
-/*   Updated: 2022/01/05 16:59:56 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/22 18:50:45 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	ft_rot(t_list **list, char *s)
 {
 	t_list	*temp;
-	
+
 	if (s)
 		ft_putendl_fd(s, 1);
 	if (*list)
@@ -29,9 +29,9 @@ void	ft_rot(t_list **list, char *s)
 
 void	ft_rot_rev(t_list **list, char *s)
 {
-		t_list	*temp;
-		t_list	*temp1;
-	
+	t_list	*temp;
+	t_list	*temp1;
+
 	if (s)
 		ft_putendl_fd(s, 1);
 	if (*list && (*list)->next)

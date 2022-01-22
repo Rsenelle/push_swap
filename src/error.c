@@ -6,15 +6,21 @@
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 21:56:31 by rsenelle          #+#    #+#             */
-/*   Updated: 2021/12/28 20:10:50 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/22 18:49:40 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
-void	ft_error()
+void	ft_error(char *s)
 {
-	ft_putendl_fd("Error", 2);
+	if (!s)
+		ft_putendl_fd("Error", 2);
+	else
+	{
+		ft_putendl_fd("Error", 2);
+		ft_putendl_fd(s, 2);
+	}
 	exit(1);
 }
 

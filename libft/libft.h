@@ -6,7 +6,7 @@
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 20:47:29 by rsenelle          #+#    #+#             */
-/*   Updated: 2022/01/04 14:49:56 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/22 18:52:11 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_list
 {
 	int				num;
+	size_t			index;
 	struct s_list	*next;
 }				t_list;
 
@@ -67,6 +68,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 // void	ft_lstiter(t_list *lst, void (*f)(void *));
 
-int	ft_atoi_ps(const char *str, int *num);
+int		ft_atoi_ps(const char *str, int *num);
 
 #endif
