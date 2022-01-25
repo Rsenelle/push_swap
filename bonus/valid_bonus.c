@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid.c                                            :+:      :+:    :+:   */
+/*   valid_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:07:06 by rsenelle          #+#    #+#             */
-/*   Updated: 2022/01/24 16:40:10 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/24 16:45:47 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_number(char *s)
 	while (s[i])
 	{
 		if (!ft_isdigit(s[i]))
-			ft_error("Incorrect input");
+			ft_error(NULL);
 	i++;
 	}
 	return (0);
@@ -57,30 +57,4 @@ int	check_double(t_list **st_a, int x)
 		temp = temp->next;
 	}
 	return (0);
-}
-
-void	validation(int argc, char **argv, t_ps *s_ps)
-{
-	int		i;
-	int		num;
-	t_list	*new;
-
-	new = NULL;
-	i = 1;
-	while (i < argc)
-	{
-		check_number(argv[i]);
-		if (ft_atoi_ps(argv[i], &num))
-			ft_error("Wrong input");
-		if (check_double(&s_ps->st_a, num))
-			ft_error("Duplicate nums");
-		new = ft_lstnew(num);
-		if (!new)
-			ft_error("Memory was not allocated");
-		ft_lstadd_back(&s_ps->st_a, new);
-		s_ps->size_a++;
-		i++;
-	}
-	if (is_sorted(&s_ps->st_a))
-		ft_error("Stack is already sorted");
 }

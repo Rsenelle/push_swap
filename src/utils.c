@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/25 21:18:56 by rsenelle          #+#    #+#             */
-/*   Updated: 2022/01/22 19:27:10 by rsenelle         ###   ########.fr       */
+/*   Created: 2021/12/26 21:56:31 by rsenelle          #+#    #+#             */
+/*   Updated: 2022/01/24 16:39:15 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	ft_error(char *s)
+{
+	if (!s)
+		ft_putendl_fd("Error", 2);
+	else
+	{
+		ft_putendl_fd("Error", 2);
+		ft_putendl_fd(s, 2);
+	}
+	exit(1);
+}
 
 int	ft_size_stack(t_list *st)
 {
@@ -27,28 +39,24 @@ int	ft_size_stack(t_list *st)
 	return (len);
 }
 
-void	parsing(int argc, char **argv, t_ps *s_ps)
+void	print_stack(t_list *st, char *s)
 {
-	int		i;
-	int		num;
-	t_list	*new;
-
-	new = NULL;
-	i = 1;
-	while (i < argc)
+	ft_putstr_fd(s, 1);
+	if (!st)
+		ft_putendl_fd("empty", 1);
+	while (st)
 	{
-		check_number(argv[i]);
-		if (ft_atoi_ps(argv[i], &num))
-			ft_error("Wrong input");
-		if (check_double(&s_ps->st_a, num))
-			ft_error("Duplicate nums");
-		new = ft_lstnew(num);
-		if (!new)
-			ft_error("Memory was not allocated");
-		ft_lstadd_back(&s_ps->st_a, new);
-		s_ps->size_a++;
-		i++;
+		ft_putnbr_fd(st->num, 1);
+		if (st->next)
+			ft_putstr_fd(", ", 1);
+		else
+			ft_putendl_fd("", 1);
+		st = st->next;
 	}
-	if (is_sorted(&s_ps->st_a))
-		ft_error("Stack is already sorted");
+}
+
+void	pst(t_ps *s_ps)
+{
+	print_stack(s_ps->st_a, "A: ");
+	print_stack(s_ps->st_b, "B: ");
 }

@@ -1,20 +1,19 @@
 NAME	=	push_swap
 
-SRCS_F	=	parsing.c			error.c			init_struct.c		ft_swap.c\
-			ft_push.c			ft_rot.c		valid.c				sort3elems.c\
-			sorting5elems.c		arr_sort.c		big_sort.c			main.c
+SRCS_F	=	utils.c				init_struct.c		main.c			valid.c\
+			ft_push.c			ft_rot.c			ft_swap.c		sort3elems.c\
+			sorting5elems.c		arr_sort.c			big_sort.c
 
 SRCS_D	=	src/
-
 
 INCLUDE	=	-I./include/ -I./libft/
 
 OBJS	=	$(SRCS:.c=.o)
 
-
 CC		=	gcc
 
 CFLAGS	=	-Wall -Wextra -Werror -MMD -g
+
 SRCS	=	$(addprefix $(SRCS_D),$(SRCS_F))
 
 LIBFT	=	./libft/libft.a

@@ -6,7 +6,7 @@
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:21:30 by rsenelle          #+#    #+#             */
-/*   Updated: 2022/01/25 16:29:32 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:08:48 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_rot(t_list **list, char *s)
 
 	if (s)
 		ft_putendl_fd(s, 1);
-	if (*list && (*list)->next)
+	if (*list)
 	{
 		ft_lstadd_back(list, *list);
 		temp = *list;

@@ -6,7 +6,7 @@
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 12:47:33 by rsenelle          #+#    #+#             */
-/*   Updated: 2022/01/22 19:32:25 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/24 16:41:56 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ size_t	find_max_index(t_list *s_list, t_ps *s_ps);
 int		ft_size_stack(t_list *st);
 void	big_sort(t_ps *s_ps);
 void	more_arguments(int argc, char **argv, t_ps *s_ps);
-void	parsing(int argc, char **argv, t_ps *s_ps);
+void	validation(int argc, char **argv, t_ps *s_ps);
 
 #endif
