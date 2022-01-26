@@ -6,11 +6,12 @@
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 23:56:11 by rsenelle          #+#    #+#             */
-/*   Updated: 2021/12/26 20:49:02 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/25 17:01:10 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	pars_minus(const char *str, int *i, long int *n)
 {

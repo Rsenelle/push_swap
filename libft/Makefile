@@ -6,7 +6,7 @@
 #    By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 17:21:43 by rsenelle          #+#    #+#              #
-#    Updated: 2021/12/26 22:52:57 by rsenelle         ###   ########.fr        #
+#    Updated: 2022/01/25 18:32:09 by rsenelle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ RM	= rm -f
 .c.o:	${HEADER}
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o} -I ${HEADER}
 
-${NAME}: ${OBJ} ${HEADER}
+${NAME}: ${HEADER} ${OBJ} 
 	${LIBC} ${NAME} ${OBJ}
 	${LIBR} ${NAME}
 

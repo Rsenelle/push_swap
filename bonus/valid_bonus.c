@@ -6,7 +6,7 @@
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:07:06 by rsenelle          #+#    #+#             */
-/*   Updated: 2022/01/24 16:45:47 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:32:38 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,28 @@ int	check_double(t_list **st_a, int x)
 		temp = temp->next;
 	}
 	return (0);
+}
+
+void	validation(int argc, char **argv, t_ps *s_ps)
+{
+	int		i;
+	int		num;
+	t_list	*new;
+
+	new = NULL;
+	i = 1;
+	while (i < argc)
+	{
+		check_number(argv[i]);
+		if (ft_atoi_ps(argv[i], &num))
+			ft_error(NULL);
+		if (check_double(&s_ps->st_a, num))
+			ft_error(NULL);
+		new = ft_lstnew(num);
+		if (!new)
+			ft_error(NULL);
+		ft_lstadd_back(&s_ps->st_a, new);
+		s_ps->size_a++;
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: rsenelle <rsenelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 12:47:33 by rsenelle          #+#    #+#             */
-/*   Updated: 2022/01/24 16:41:56 by rsenelle         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:16:39 by rsenelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 
 # include "../libft/libft.h"
+# include "get_next_line.h"
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
@@ -54,5 +55,8 @@ int		ft_size_stack(t_list *st);
 void	big_sort(t_ps *s_ps);
 void	more_arguments(int argc, char **argv, t_ps *s_ps);
 void	validation(int argc, char **argv, t_ps *s_ps);
+void	cndnls_for_next_movements(char *buff, t_ps *s_ps);
+void	more_arguments_bonus(int argc, char **argv, t_ps *s_ps);
+
 
 #endif
